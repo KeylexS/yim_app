@@ -1,6 +1,16 @@
 import { Routes } from '@angular/router';
 
+// Define las rutas de la aplicación
+// Se utiliza loadComponent para cargar los componentes
+// de forma diferida (lazy loading) para mejorar el rendimiento
+// y reducir el tamaño del bundle inicial
+
 export const routes: Routes = [
+  {
+    path: '',
+    redirectTo: 'welcome-page',
+    pathMatch: 'full'
+  },
   {
     path: 'welcome-page',
     loadComponent: () => import('./pages/welcome-page/welcome-page.page').then( m => m.WelcomePage )
@@ -18,3 +28,5 @@ export const routes: Routes = [
     loadComponent: () => import('./pages/achievements/achievements.page').then( m => m.AchievementsPage)
   },
 ];
+
+
