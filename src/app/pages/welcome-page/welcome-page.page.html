@@ -1,16 +1,22 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>Main</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content class="ion-padding page-wrapper">
+  <!-- Main content wrapper -->
+  <div class="content-wrapper">
+    <div class="logo-container">
+      <!-- YIM Logo -->
+      <img src="assets/img/yim-logo.png" alt="YIM Logo" class="logo-img" />
+      <!-- YIM Logo Text -->
+      <img src="assets/img/yim-logoname.png" alt="YIM Logo Text" class="logo-text" />
+    </div>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Main</ion-title>
-    </ion-toolbar>
-  </ion-header>
+    <!-- Welcome button that leads to the classes-list page -->
+    <ion-router-link [routerLink]="['/classes-list']">
+      <img src="assets/img/start-button.png" alt="Start" class="start-img" />
+    </ion-router-link>
+  </div>
 
+  <!-- Footer where the UCR logo will be displayed -->
+  <div class="footer">
+    <img src="assets/img/ucr-logo.png" alt="UCR Logo" class="ucr-logo" />
+  </div>
   
-  <ion-button [routerLink]="['/classes-list']">Start</ion-button>
 </ion-content>
