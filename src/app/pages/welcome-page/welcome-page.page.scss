@@ -1,0 +1,65 @@
+// Styles for the Welcome Page
+
+// This container holds the logo, the text and the start button
+// and centers them on the page. They are stacked vertically and are
+// spaced out evenly
+.logo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 15vh;
+  margin-bottom: 30px;
+}
+
+// The logo image, it's respective width, height and spacing
+.logo-img {
+  width: 60vw;
+  max-width: 200px;
+  height: auto;
+  margin-bottom: 16px;
+}
+
+// The logo text "YIM", it's respective width, height and spacing
+.logo-text {
+  width: 70vw;
+  max-width: 120px;
+  height: auto;
+}
+
+// The start button, it's respective width, height and spacing
+.start-img {
+  width: 200vw;
+  max-width: 200px;
+  height: auto;
+  display: block;
+  margin: 20px auto;
+  padding-top: 40px;
+  transition: filter 0.2s ease, transform 0.2s ease;
+
+  // This part makes it so the button has an animation when clicked on
+  // when the button is clicked, it will darken slightly and scale down
+  &:active {
+    filter: brightness(0.85);
+    transform: scale(0.98);
+  }
+}
+
+// The footer here just contains the UCR logo and centers it
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 3px;
+  margin-top: 20px; /* Moves the entire footer lower */
+}
+
+// The UCR logo, it's respective width, height and spacing.
+// We had to make the margin-top significantly larger to separate it from
+// the other elements and match the prototype we have on Figma
+.ucr-logo {
+  width: 100vw;
+  max-width: 150px;
+  height: auto;
+  margin-top: 60px;
+}
