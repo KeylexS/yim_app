@@ -27,6 +27,10 @@ export const routes: Routes = [
     path: 'achievements',
     loadComponent: () => import('./pages/achievements/achievements.page').then( m => m.AchievementsPage)
   },
+  {
+    path: 'home-page',
+    loadComponent: () => import('./pages/home-page/home-page.page').then( m => m.HomePage)
+  }
 ];
 
 
