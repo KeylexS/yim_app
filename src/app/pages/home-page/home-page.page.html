@@ -4,11 +4,14 @@
             Aprende Boruca
         </ion-title>
     </ion-toolbar>
-    <ion-toolbar class="search-section">
-        <ion-searchbar placeholder="Buscar Clase" animated="true"></ion-searchbar>
-        <ion-button (click)="searchFunction()" fill="clear">
-            <ion-icon name="src\assets\icon\search.svg" slot="icon-only" color="primary"></ion-icon>
-        </ion-button>
+    <ion-toolbar>
+        <div class="search-section">
+            <ion-searchbar placeholder="Buscar Clase"
+                animated="true"></ion-searchbar>
+            <ion-button (click)="searchFunction()" fill="clear">
+                <ion-icon name="search"></ion-icon>
+            </ion-button>
+        </div>
     </ion-toolbar>
 </ion-header>
 

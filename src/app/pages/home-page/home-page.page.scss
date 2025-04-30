@@ -22,6 +22,7 @@ ion-header {
   display: flex;
   align-items: center; /* Vertically align the items in the center */
   padding: 10px; /* Add some padding for better spacing */
+  width: 100%;
 }
 
 
@@ -32,9 +33,10 @@ ion-searchbar {
   margin: 0;
   border-radius: 10px;
   flex: 1;
-  margin-right: 10px;
+  margin-right: 8px;
+  width: 70%;
 }
 
 ion-icon {
-  font-size: 1.5rem; /* Adjust icon size for better visibility */
+  font-size: 1.5rem; 
 }
