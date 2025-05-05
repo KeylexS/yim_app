@@ -11,10 +11,14 @@ if (environment.production) {
   enableProdMode();
 }
 
+import { provideHttpClient } from '@angular/common/http';
+
+
 bootstrapApplication(AppComponent, {
   providers: [
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     provideIonicAngular(),
     provideRouter(routes),
+    provideHttpClient()
   ],
 });

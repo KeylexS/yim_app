@@ -1,20 +1,57 @@
 import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgIf, NgFor } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/angular/standalone';
+import { HttpClient } from '@angular/common/http';
+import {
+  IonContent,
+  IonHeader,
+  IonTitle,
+  IonToolbar,
+  IonCard,
+  IonCardContent,
+  IonCardHeader,
+  IonCardSubtitle,
+  IonCardTitle,
+  IonGrid,
+  IonRow,
+  IonCol,
+} from '@ionic/angular/standalone';
+
 
 @Component({
   selector: 'app-classes-list',
   templateUrl: './classes-list.page.html',
   styleUrls: ['./classes-list.page.scss'],
   standalone: true,
-  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule]
+  imports: [
+    CommonModule,
+    FormsModule,
+    NgIf,
+    NgFor,
+    IonContent,
+    IonHeader,
+    IonTitle,
+    IonToolbar,
+    IonCard,
+    IonCardContent,
+    IonCardHeader,
+    IonCardSubtitle,
+    IonCardTitle,
+    IonGrid,
+    IonRow,
+    IonCol
+  ]
+  
+  
 })
 export class ClassesListPage implements OnInit {
+  classes: any[] = [];
 
-  constructor() { }
+  constructor(private http: HttpClient) {}
 
   ngOnInit() {
+    this.http.get<any>('assets/data/Clases_info.json').subscribe(data => {
+      this.classes = data.classes; // ✅ because your JSON has a "classes" key
+    });
   }
-
 }
