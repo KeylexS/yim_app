@@ -15,7 +15,7 @@ import {
   IonGrid,
   IonRow,
   IonCol,
-  IonIcon // <-- Add this
+  IonIcon
 } from '@ionic/angular/standalone';
 
 
@@ -42,7 +42,7 @@ import {
     IonGrid,
     IonRow,
     IonCol,
-    IonIcon // <-- Add this here too
+    IonIcon
   ]
   
 })
@@ -53,7 +53,7 @@ export class ClassesListPage implements OnInit {
 
   ngOnInit() {
     this.http.get<any>('assets/data/Clases_info.json').subscribe(data => {
-      this.classes = data.classes; // ✅ because your JSON has a "classes" key
+      this.classes = data.classes;
     });
   }
 }
