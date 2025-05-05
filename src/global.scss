@@ -24,3 +24,22 @@
 @import "@ionic/angular/css/text-alignment.css";
 @import "@ionic/angular/css/text-transformation.css";
 @import "@ionic/angular/css/flex-utils.css";
+
+
+.footer-label {
+  font-size: 10px !important;
+  line-height: 1.2;
+  text-align: center;
+  font-style: bold;
+  color: #222;
+}
+
+.footer-icon {
+  width: 48px !important;
+  height: 48px !important;
+  display: block;
+  margin: 0 auto 4px auto;
+  object-fit: contain;
+  max-width: 100% !important;
+  max-height: 100% !important;
+}
