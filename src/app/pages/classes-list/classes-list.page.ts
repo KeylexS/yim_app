@@ -15,7 +15,9 @@ import {
   IonGrid,
   IonRow,
   IonCol,
+  IonIcon // <-- Add this
 } from '@ionic/angular/standalone';
+
 
 
 @Component({
@@ -39,9 +41,9 @@ import {
     IonCardTitle,
     IonGrid,
     IonRow,
-    IonCol
+    IonCol,
+    IonIcon // <-- Add this here too
   ]
-  
   
 })
 export class ClassesListPage implements OnInit {
