@@ -1,13 +1,28 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>ClassesList</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">ClassesList</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content [fullscreen]="true" class="classes-content">
+  <!-- Contenedor principal que muestra las clases -->
+  <ion-grid *ngIf="classes?.length">
+    <ion-row>
+      <!-- Itera sobre la lista de clases y genera una tarjeta para cada una -->
+      <ion-col size="12" *ngFor="let item of classes">
+          <ion-card class="class-card">
+            <ion-card-header>
+              <!-- Título de la tarjeta que muestra el número y nombre de la clase -->
+              <ion-card-title>
+                #{{ item.class_number }} {{ item.name }}
+              </ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+              <div class="card-content-row">
+                <div class="description">
+                  <!-- Descripción de la clase -->
+                  {{ item.description }}
+                </div>
+                <!-- Icono asociado a la tarjeta de la clase -->
+                <img src="assets/img/classcard-icon.png" alt="icon" class="icon-image" />
+              </div>
+            </ion-card-content>            
+          </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
