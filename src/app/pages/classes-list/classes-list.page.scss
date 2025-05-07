@@ -43,3 +43,37 @@
     }
   }
 }
+
+.header-section {
+  backdrop-filter: blur(10px);
+  --background: #efecec;
+  --box-shadow: none;
+  box-shadow: none;
+}
+
+.search-section {
+  display: flex;
+  align-items: center; /* Vertically align the items in the center */
+  padding: 1px; /* Add some padding for better spacing */
+  width: 100%;
+}
+
+ion-searchbar {
+  --background: #efecec;
+  --color: #222;
+  --box-shadow: none;
+  margin: 0;
+  padding-top: 10px;
+  border-radius: 5px;
+  flex: 1;
+  width: 70%;
+}
+
+ion-icon {
+  font-size: 3rem;
+  margin-bottom: 10%;
+}
+
+ion-content {
+  --background: #efecec;
+}
