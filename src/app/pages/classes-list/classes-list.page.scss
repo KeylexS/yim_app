@@ -1,0 +1,79 @@
+.class-card {
+  border-radius: 16px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.4);
+  margin: 10px 0;
+  background: white;
+  height: 110px;
+  overflow: hidden;
+
+  ion-card-header {
+    padding: 8px 12px 0 12px;
+
+    ion-card-title {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #333;
+      margin: 0;
+      padding-top: 5px;
+    }
+  }
+
+  ion-card-content {
+    padding: 0;
+
+    .card-content-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 4px 12px;
+    }
+
+    .description {
+      font-size: 0.9rem;
+      color: #99BAA3;
+      margin-right: 35px;
+    }
+
+    .icon-image {
+      width: 55px;
+      height: 55px;
+      object-fit: contain;
+      opacity: 0.8;
+      padding-right: 8px;
+    }
+  }
+}
+
+.header-section {
+  backdrop-filter: blur(10px);
+  --background: #efecec;
+  --box-shadow: none;
+  box-shadow: none;
+}
+
+.search-section {
+  display: flex;
+  align-items: center; /* Vertically align the items in the center */
+  padding: 1px; /* Add some padding for better spacing */
+  width: 100%;
+}
+
+ion-searchbar {
+  --background: #efecec;
+  --color: #222;
+  --box-shadow: none;
+  margin: 0;
+  padding-top: 10px;
+  border-radius: 5px;
+  flex: 1;
+  width: 70%;
+}
+
+ion-icon {
+  font-size: 3rem;
+  margin-bottom: 10%;
+}
+
+ion-content {
+  --background: #efecec;
+}

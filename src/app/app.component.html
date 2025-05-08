@@ -1,23 +1,66 @@
 <ion-app>
-  <ion-content> </ion-content>
-  <ion-router-outlet></ion-router-outlet>
-  <ion-footer *ngIf="showMenu">
+  <ion-content>
+    <ion-router-outlet></ion-router-outlet>
+  </ion-content>
+
+  <!-- Pie de página personalizado que se muestra si showMenu es verdadero. -->
+  <!-- Esto es para que no aparezca en la página de bienvenida y -->
+  <!--tampoco dentro de las lecciones-->
+  <ion-footer *ngIf="showMenu" class="custom-footer">
     <ion-toolbar>
-      <ion-buttons slot="start">
-        <ion-button routerLink="/classes-list" routerDirection="root">
-          <ion-label>Clases</ion-label>
-        </ion-button>
-      </ion-buttons>
-      <ion-buttons slot="start">
-        <ion-button routerLink="/completed-classes" routerDirection="root">
-          <ion-label>Completadas</ion-label>
-        </ion-button>
-      </ion-buttons>
-      <ion-buttons slot="start">
-        <ion-button routerLink="/achievements" routerDirection="root">
-          <ion-label>Logros</ion-label>
-        </ion-button>
-      </ion-buttons>
+      <ion-grid>
+        <ion-row class="ion-justify-content-around">
+
+          <!-- Sección de Clases -->
+          <ion-col size="3" class="footer-tab">
+            <div class="footer-button" [routerLink]="'/classes-list'">
+              <!-- Icono que cambia según la ruta actual -->
+              <img
+                [src]="currentRoute === '/classes-list'
+                  ? 'assets/img/classes-icon-active.png'
+                  : 'assets/img/classes-icon.png'"
+                alt="Clases"
+                class="footer-icon"
+              />
+              <!-- Etiqueta para Clases -->
+              <div class="footer-label">Lecciones</div>
+            </div>
+          </ion-col>
+
+          <!-- Sección de Clases Completadas -->
+          <ion-col size="3" class="footer-tab">
+            <div class="footer-button" [routerLink]="'/completed-classes'">
+              <!-- Icono que cambia según la ruta actual -->
+              <img
+                [src]="currentRoute === '/completed-classes'
+                  ? 'assets/img/completed-icon-active.png'
+                  : 'assets/img/completed-icon.png'"
+                alt="Completadas"
+                class="footer-icon"
+              />
+              <!-- Etiqueta para Clases Completadas -->
+              <div class="footer-label">Completadas</div>
+            </div>
+          </ion-col>
+
+          <!-- Sección de Logros -->
+          <ion-col size="3" class="footer-tab">
+            <div class="footer-button" [routerLink]="'/achievements'">
+              <!-- Icono que cambia según la ruta actual -->
+              <img
+                [src]="currentRoute === '/achievements'
+                  ? 'assets/img/achievements-icon-active.png'
+                  : 'assets/img/achievements-icon.png'"
+                alt="Logros"
+                class="footer-icon"
+              />
+              <!-- Etiqueta para Logros -->
+              <div class="footer-label">Logros</div>
+            </div>
+          </ion-col>
+
+        </ion-row>
+      </ion-grid>
     </ion-toolbar>
   </ion-footer>
 </ion-app>

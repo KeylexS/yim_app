@@ -1,0 +1,26 @@
+.footer-icon {
+  width: 4px !important;
+  height: 4px !important;
+  display: block;
+  margin: 0 auto 4px auto;
+  object-fit: contain;
+  max-width: 100% !important;
+  max-height: 100% !important;
+}
+
+
+.footer-label {
+  font-size: 10px !important;
+  line-height: 1.1 !important;
+  text-align: center;
+  color: #444;
+}
+
+.footer-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  --padding-start: 0;
+  --padding-end: 0;
+}

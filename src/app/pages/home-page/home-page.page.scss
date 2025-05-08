@@ -1,0 +1,42 @@
+h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #3880ff;
+  /* Ionic primary color */
+}
+
+p {
+  font-size: 1.2rem;
+  color: #222;
+}
+
+
+ion-header {
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.4);
+  --box-shadow: none;
+  box-shadow: none;
+}
+
+.search-section {
+  display: flex;
+  align-items: center; /* Vertically align the items in the center */
+  padding: 10px; /* Add some padding for better spacing */
+  width: 100%;
+}
+
+
+ion-searchbar {
+  --background: #f0f0f0;
+  --color: #222;
+  --box-shadow: none;
+  margin: 0;
+  border-radius: 10px;
+  flex: 1;
+  margin-right: 8px;
+  width: 70%;
+}
+
+ion-icon {
+  font-size: 1.5rem; 
+}
