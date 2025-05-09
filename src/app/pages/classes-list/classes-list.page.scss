@@ -1,20 +1,22 @@
+
 .class-card {
   border-radius: 16px;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.4);
   margin: 10px 0;
   background: white;
-  height: 110px;
+  height: 85px;
   overflow: hidden;
 
   ion-card-header {
     padding: 8px 12px 0 12px;
 
     ion-card-title {
-      font-size: 1rem;
+      font-size: 0.8rem;
       font-weight: 600;
       color: #333;
       margin: 0;
       padding-top: 5px;
+      padding-bottom: 0px;
     }
   }
 
@@ -25,11 +27,11 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 4px 12px;
+      padding: 0px 12px;
     }
 
     .description {
-      font-size: 0.9rem;
+      font-size: 0.7rem;
       color: #99BAA3;
       margin-right: 35px;
     }
@@ -46,7 +48,7 @@
 
 .header-section {
   backdrop-filter: blur(10px);
-  --background: #efecec;
+  --background: #EEECEC;
   --box-shadow: none;
   box-shadow: none;
 }
@@ -58,22 +60,50 @@
   width: 100%;
 }
 
-ion-searchbar {
-  --background: #efecec;
-  --color: #222;
-  --box-shadow: none;
-  margin: 0;
+ion-title {
+  font-family: 'Fredoka', sans-serif !important;
+  font-size: 1rem;
   padding-top: 10px;
-  border-radius: 5px;
-  flex: 1;
-  width: 70%;
 }
 
+
+ion-searchbar {
+  --background: #fff;
+  --color: #222;
+  --placeholder-color: #999;
+  --icon-color: #666;
+  --clear-button-color: #999;
+
+  --border-radius: 999px;
+  --box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+  font-family: 'Fredoka', sans-serif;
+  height: 48px;
+  padding-left: 10px;
+
+  /* This hides the default outline/rectangle */
+  outline: none;
+}
+
+ion-searchbar:focus-within {
+  --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Optional: remove any remaining focus outlines in WebKit/Blink */
+ion-searchbar ::part(native-input) {
+  border-radius: 999px;
+  outline: none;
+  box-shadow: none;
+}
+
+
 ion-icon {
-  font-size: 3rem;
+  font-size: 2rem;
   margin-bottom: 10%;
 }
 
 ion-content {
-  --background: #efecec;
+  --background: #EEECEC !important;
+  background: #EEECEC !important;
 }
+

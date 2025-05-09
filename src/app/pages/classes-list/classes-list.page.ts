@@ -47,7 +47,9 @@ import {
   ],
 })
 export class ClassesListPage implements OnInit {
-  classes: any[] = [];
+  searchTerm: string = '';         // <- NEW: bind to search input
+  classes: any[] = [];             // Displayed (filtered) list
+  allClasses: any[] = [];          // Full original list
 
   constructor(private http: HttpClient) {
     addIcons({ search });
@@ -55,12 +57,18 @@ export class ClassesListPage implements OnInit {
 
   ngOnInit() {
     this.http.get<any>('assets/data/Clases_info.json').subscribe((data) => {
-      this.classes = data.classes;
+      this.allClasses = data.classes;
+      this.classes = [...this.allClasses]; // Initially show all
     });
   }
 
   searchFunction() {
-    console.log('Search button clicked!');
-    // Add the logic for your search functionality here
+    const term = this.searchTerm.toLowerCase();
+
+    this.classes = this.allClasses.filter(item =>
+      item.name.toLowerCase().includes(term) ||
+      item.description.toLowerCase().includes(term) ||
+      item.class_number.toString().includes(term)
+    );
   }
 }
