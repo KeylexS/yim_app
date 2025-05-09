@@ -26,20 +26,25 @@
 @import "@ionic/angular/css/flex-utils.css";
 
 
+
 .footer-label {
-  font-size: 10px !important;
+  font-size: 8px !important;
   line-height: 1.2;
   text-align: center;
-  font-style: bold;
+  font-weight: 700;
   color: #222;
 }
 
 .footer-icon {
-  width: 40px !important;
-  height: 40px !important;
+  width: 30px !important;
+  height: 30px !important;
   display: block;
   margin: 0 auto 4px auto;
   object-fit: contain;
   max-width: 100% !important;
   max-height: 100% !important;
+}
+
+.custom-footer {
+  background: #EEECEC;
 }
