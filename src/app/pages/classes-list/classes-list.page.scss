@@ -1,4 +1,3 @@
-
 .class-card {
   border-radius: 16px;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.4);
@@ -46,17 +45,10 @@
   }
 }
 
-.header-section {
-  backdrop-filter: blur(10px);
-  --background: #EEECEC;
-  --box-shadow: none;
-  box-shadow: none;
-}
-
 .search-section {
   display: flex;
-  align-items: center; /* Vertically align the items in the center */
-  padding: 1px; /* Add some padding for better spacing */
+  align-items: center; 
+  padding: 1px; 
   width: 100%;
 }
 
@@ -64,11 +56,24 @@ ion-title {
   font-family: 'Fredoka', sans-serif !important;
   font-size: 1rem;
   padding-top: 10px;
+  color: #333;
+  background-color: #EEECEC;
 }
 
+ion-header {
+  background-color: #EEECEC !important;
+  --background: #EEECEC !important; 
+  --box-shadow: none; 
+  box-shadow: none;
+}
+
+ion-toolbar {
+  background-color: #EEECEC !important; 
+  --background: #EEECEC !important;
+}
 
 ion-searchbar {
-  --background: #fff;
+  --background: white;
   --color: #222;
   --placeholder-color: #999;
   --icon-color: #666;
@@ -81,7 +86,6 @@ ion-searchbar {
   height: 48px;
   padding-left: 10px;
 
-  /* This hides the default outline/rectangle */
   outline: none;
 }
 
@@ -89,21 +93,15 @@ ion-searchbar:focus-within {
   --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
-/* Optional: remove any remaining focus outlines in WebKit/Blink */
 ion-searchbar ::part(native-input) {
   border-radius: 999px;
   outline: none;
   box-shadow: none;
 }
 
-
 ion-icon {
   font-size: 2rem;
   margin-bottom: 10%;
 }
 
-ion-content {
-  --background: #EEECEC !important;
-  background: #EEECEC !important;
-}
 

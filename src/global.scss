@@ -48,3 +48,14 @@
 .custom-footer {
   background: #EEECEC;
 }
+
+ion-footer {
+  background-color: #EEECEC;
+  --box-shadow: none;
+  box-shadow: none;
+}
+
+ion-content {
+  --background: #EEECEC !important;
+  background: #EEECEC !important;
+}

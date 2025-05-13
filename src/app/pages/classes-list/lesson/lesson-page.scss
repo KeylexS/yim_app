@@ -1,0 +1,30 @@
+.back-button-container {
+  display: flex;
+  justify-content: flex-start; 
+  padding: 16px;
+}
+
+.back-button {
+  width: 35px; 
+  height: 35px;
+  cursor: pointer; 
+}
+
+.lesson-content {
+  padding: 16px;
+  text-align: center;
+  background-color: #f9f9f9; 
+  border-radius: 8px; 
+  margin: 16px; 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.lesson-content h1 {
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+.lesson-content p {
+  font-size: 16px;
+  color: #666;
+}
