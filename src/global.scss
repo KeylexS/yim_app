@@ -25,8 +25,6 @@
 @import "@ionic/angular/css/text-transformation.css";
 @import "@ionic/angular/css/flex-utils.css";
 
-
-
 .footer-label {
   font-size: 8px !important;
   line-height: 1.2;
@@ -50,12 +48,20 @@
 }
 
 ion-footer {
-  background-color: #EEECEC;
-  --box-shadow: none;
-  box-shadow: none;
+  background-color: #EEECEC !important;
+  --background: #EEECEC !important;
+  --box-shadow: none !important;
+  box-shadow: none !important;
 }
 
 ion-content {
   --background: #EEECEC !important;
   background: #EEECEC !important;
+}
+
+ion-footer ion-toolbar {
+  background-color: #EEECEC !important;
+  --background: #EEECEC !important;
+  --box-shadow: none !important;
+  box-shadow: none !important;
 }
