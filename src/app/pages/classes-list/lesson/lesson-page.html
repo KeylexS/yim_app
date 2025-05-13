@@ -1,0 +1,14 @@
+
+<ion-content>
+  <div class="back-button-container">
+    <ion-button (click)="goBack()" fill="clear">
+      <ion-icon name="arrow-back-outline"></ion-icon>
+      Volver
+    </ion-button>
+  </div>
+
+  <div class="lesson-content">
+    <h1>{{ lessonData?.name }}</h1>
+    <p>{{ lessonData?.description }}</p>
+  </div>
+</ion-content>
