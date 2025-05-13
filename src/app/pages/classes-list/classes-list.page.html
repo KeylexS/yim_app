@@ -22,7 +22,8 @@
   <ion-grid *ngIf="classes?.length; else noResults">
     <ion-row>
       <ion-col size="12" *ngFor="let item of classes">
-        <ion-card class="class-card">
+        <!-- Navegar a la pagina de la lección -->
+        <ion-card class="class-card" (click)="openClass(item.class_number)">
           <ion-card-header>
             <ion-card-title>
               #{{ item.class_number }} {{ item.name }}
