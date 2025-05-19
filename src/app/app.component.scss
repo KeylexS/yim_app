@@ -1,26 +1,12 @@
-.footer-icon {
-  width: 3px !important;
-  height: 3px !important;
-  display: block;
-  margin: 0 auto 4px auto;
-  object-fit: contain;
-  max-width: 100% !important;
-  max-height: 100% !important;
+ion-footer {
+  background-color: #EEECEC !important;
+  --background: #EEECEC !important;
+  box-shadow: none !important;
+  border-top: none;
 }
 
-
-.footer-label {
-  font-size: 9px !important;
-  line-height: 1.1 !important;
-  text-align: center;
-  color: #444;
-}
-
-.footer-button {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  --padding-start: 0;
-  --padding-end: 0;
+ion-footer ion-toolbar {
+  background-color: #EEECEC !important;
+  --background: #EEECEC !important;
+  box-shadow: none !important;
 }

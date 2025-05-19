@@ -1,0 +1,15 @@
+<ion-content>
+  <div class="back-button-container">
+    <img 
+      src="../../../../assets/img/back-button.png" 
+      alt="Volver" 
+      class="back-button" 
+      (click)="goBack()" 
+    />
+  </div>
+
+  <div class="lesson-content">
+    <h1>{{ lessonData?.name }}</h1>
+    <p>{{ lessonData?.description }}</p>
+  </div>
+</ion-content>

@@ -24,7 +24,7 @@ export class AppComponent {
   }
 
   get showMenu(): boolean {
-    return this.currentRoute !== '/welcome-page';
+    return this.currentRoute !== '/welcome-page' && !this.currentRoute.startsWith('/lesson/');
   }
 }
 

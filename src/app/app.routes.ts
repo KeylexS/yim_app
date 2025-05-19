@@ -30,6 +30,10 @@ export const routes: Routes = [
   {
     path: 'home-page',
     loadComponent: () => import('./pages/home-page/home-page.page').then( m => m.HomePage)
+  },
+  {
+    path: 'lesson/:classNumber',
+    loadComponent: () => import('./pages/classes-list/lesson/lesson-page').then(m => m.LessonPage)
   }
 ];
 
