@@ -1,40 +1,36 @@
 {
-  "words": [
-    {
-      "word": "Aúj",
-      "meaning": "Perro"
-    },
-    {
-      "word": "Bís",
-      "meaning": "Gato"
-    },
-    {
-      "word": "Cratus",
-      "meaning": "Pato"
-    },
-    {
-      "word": "Turí",
-      "meaning": "Vaca"
-    },
-    {
-      "word": "Sarócra",
-      "meaning": "Caballo"
-    },
-    {
-      "word": "Cró",
-      "meaning": "Gallina"
-    },
-    {
-      "word": "Cuchi",
-      "meaning": "Cerdo"
-    },
-    {
-      "word": "Dibí cun",
-      "meaning": "Chompipe"
-    },
-    {
-      "word": "Aúj rammat",
-      "meaning": "Perra"
-    }
-  ]
+  "activities": {
+    "multipleChoice": [
+      {
+        "question": "Acierta la palabra",
+        "word": "Perro",
+        "options": ["Aúj", "Cuchi", "Cró"],
+        "answer": "Aúj"
+      }
+    ],
+    "matchPairs": [
+      {
+        "pairs": [
+          { "word": "Sárocra", "image": "assets/img/cat.png" },
+          { "word": "Bís", "image": "assets/img/cow.png" },
+          { "word": "Turí", "image": "assets/img/horse.png" }
+        ]
+      }
+    ],
+    "matchImage": [
+      {
+        "question": "¿A qué corresponde la imagen?",
+        "image": "assets/img/horse.png",
+        "options": ["Dibí cun", "Cró", "Cuchi"],
+        "answer": "Cró"
+      }
+    ],
+    "typing": [
+      {
+        "question": "Escribe la traducción",
+        "word": "Sarócra",
+        "answer": "Caballo"
+      }
+    ]
+  }
 }
