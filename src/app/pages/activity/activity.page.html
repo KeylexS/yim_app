@@ -1,0 +1,27 @@
+<ion-content class="ion-padding">
+  <ng-container [ngSwitch]="activityType">
+    <app-multiple-choice
+      *ngSwitchCase="'multipleChoice'"
+      [data]="activity"
+      (answered)="onAnswered($event)">
+    </app-multiple-choice>
+
+    <app-typing
+      *ngSwitchCase="'typing'"
+      [data]="activity"
+      (answered)="onAnswered($event)">
+    </app-typing>
+
+    <app-match-image
+      *ngSwitchCase="'matchImage'"
+      [data]="activity"
+      (answered)="onAnswered($event)">
+    </app-match-image>
+
+    <app-match-pairs
+      *ngSwitchCase="'matchPairs'"
+      [data]="activity"
+      (completed)="onAnswered(true)">
+    </app-match-pairs>
+  </ng-container>
+</ion-content>
