@@ -1,0 +1,22 @@
+.typing-activity {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+ion-input {
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  padding: 8px;
+  background-color: white;
+
+  &.correct {
+    border-color: #28a745;
+    background-color: #e6ffe6;
+  }
+
+  &.wrong {
+    border-color: #dc3545;
+    background-color: #ffe6e6;
+  }
+}

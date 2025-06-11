@@ -4,7 +4,6 @@ import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
 import { HttpClient } from '@angular/common/http';
 
-// Import all activity components
 import { MultipleChoiceComponent } from 'src/app/components/multiple-choice/multiple-choice.component';
 import { TypingComponent } from 'src/app/components/typing/typing.component';
 import { MatchImageComponent } from 'src/app/components/match-image/match-image.component';
