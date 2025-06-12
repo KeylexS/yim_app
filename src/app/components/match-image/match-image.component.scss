@@ -1,0 +1,21 @@
+.main-image {
+  width: 100%;
+  max-height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.options ion-button {
+  margin: 0.5rem;
+}
+
+.correct {
+  background-color: #d4edda !important;
+  border: 2px solid #28a745 !important;
+}
+
+.wrong {
+  background-color: #f8d7da !important;
+  border: 2px solid #dc3545 !important;
+}
