@@ -63,7 +63,6 @@ export class MatchPairsComponent {
 
   getImageColor(word: string): string {
     if (this.correctMatches.has(word)) return 'success';
-    if (this.incorrectWord === word) return 'danger';
     return '';
   }
 }
