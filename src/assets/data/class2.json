@@ -11,16 +11,16 @@
     "matchPairs": [
       {
         "pairs": [
-          { "word": "Sárocra", "image": "assets/img/cat.png" },
-          { "word": "Bís", "image": "assets/img/cow.png" },
-          { "word": "Turí", "image": "assets/img/horse.png" }
+          { "word": "Sárocra", "image": "../../../assets/img/cat.png" },
+          { "word": "Bís", "image": "../../../assets/img/cow.png" },
+          { "word": "Turí", "image": "../../../assets/img/horse.png" }
         ]
       }
     ],
     "matchImage": [
       {
         "question": "¿A qué corresponde la imagen?",
-        "image": "assets/img/horse.png",
+        "image": "assets/img/chicken.png",
         "options": ["Dibí cun", "Cró", "Cuchi"],
         "answer": "Cró"
       }
