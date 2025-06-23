@@ -1,0 +1,15 @@
+.pair-image {
+  width: 100%;
+  max-height: 100px;
+  object-fit: contain;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+ion-item[color="success"] {
+  background-color: #d4edda !important;
+}
+
+ion-item[color="danger"] {
+  background-color: #f8d7da !important;
+}

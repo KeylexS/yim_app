@@ -1,0 +1,29 @@
+<ion-grid>
+  <ion-row>
+    <!-- Word list -->
+    <ion-col size="6">
+      <ion-list>
+        <ion-item 
+          *ngFor="let pair of data.pairs" 
+          button 
+          (click)="selectWord(pair.word)"
+          [color]="getWordColor(pair.word)">
+          {{ pair.word }}
+        </ion-item>
+      </ion-list>
+    </ion-col>
+
+    <!-- Image list -->
+    <ion-col size="6">
+      <ion-list>
+        <ion-item 
+          *ngFor="let pair of data.pairs" 
+          button 
+          (click)="selectImage(pair.image)"
+          [color]="getImageColor(pair.word)">
+          <img [src]="pair.image" alt="img" class="pair-image" />
+        </ion-item>
+      </ion-list>
+    </ion-col>
+  </ion-row>
+</ion-grid>
