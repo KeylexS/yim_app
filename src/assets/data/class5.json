@@ -1,0 +1,39 @@
+{
+  "activities": {
+    "multipleChoice": [
+      {
+        "question": "¿Cómo se dice 'Doctor' en Bribri?",
+        "word": "Doctor",
+        "options": ["Dakrö", "Sukuë́", "Usékëk"],
+        "answer": "Dakrö"
+      },
+      {
+        "question": "¿Cómo se dice 'Maestro' en Bribri?",
+        "word": "Maestro",
+        "options": ["Dakrö", "Sukuë́", "Usékëk"],
+        "answer": "Sukuë́"
+      }
+    ],
+    "typing": [
+      {
+        "question": "Escribe 'Agricultor' en Bribri",
+        "word": "Agricultor",
+        "answer": "Usékëk"
+      },
+      {
+        "question": "Escribe 'Estudiante' en Bribri",
+        "word": "Estudiante",
+        "answer": "Sukuók"
+      }
+    ],
+    "matchPairs": [
+      {
+        "pairs": [
+          { "word": "Dakrö", "translation": "Doctor" },
+          { "word": "Sukuë́", "translation": "Maestro" },
+          { "word": "Usékëk", "translation": "Agricultor" }
+        ]
+      }
+    ]
+  }
+}
