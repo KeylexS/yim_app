@@ -1,10 +1,9 @@
 <ion-grid>
   <ion-row>
-    <!-- Word list -->
     <ion-col size="6">
       <ion-list>
         <ion-item 
-          *ngFor="let pair of data.pairs" 
+          *ngFor="let pair of shuffledWords" 
           button 
           (click)="selectWord(pair.word)"
           [color]="getWordColor(pair.word)">
@@ -13,14 +12,13 @@
       </ion-list>
     </ion-col>
 
-    <!-- Image list -->
     <ion-col size="6">
       <ion-list>
         <ion-item 
-          *ngFor="let pair of data.pairs" 
+          *ngFor="let pair of shuffledImages" 
           button 
           (click)="selectImage(pair.image)"
-          [color]="getImageColor(pair.word)">
+          [color]="getImageColor(pair.image)">
           <img [src]="pair.image" alt="img" class="pair-image" />
         </ion-item>
       </ion-list>
