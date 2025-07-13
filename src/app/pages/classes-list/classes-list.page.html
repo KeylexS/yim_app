@@ -9,11 +9,10 @@
       <ion-searchbar
         placeholder="Buscar Clase"
         animated="true"
-        [(ngModel)]="searchTerm">
+        [(ngModel)]="searchTerm"
+        (ionInput)="searchFunction()"
+        show-clear-button="focus">
       </ion-searchbar>
-      <ion-button (click)="searchFunction()" fill="clear">
-        <ion-icon name="search"></ion-icon>
-      </ion-button>
     </div>
   </ion-toolbar>
 </ion-header>
@@ -22,7 +21,6 @@
   <ion-grid *ngIf="classes?.length; else noResults">
     <ion-row>
       <ion-col size="12" *ngFor="let item of classes">
-        <!-- Navegar a la pagina de la lección -->
         <ion-card class="class-card" (click)="openClass(item.class_number)">
           <ion-card-header>
             <ion-card-title>
@@ -45,7 +43,12 @@
   <ng-template #noResults>
     <ion-row class="ion-padding">
       <ion-col size="12" class="ion-text-center">
-        <p>No se encontraron clases.</p>
+        <p *ngIf="searchTerm; else noClasses">
+          No se encontraron clases que coincidan con "{{ searchTerm }}".
+        </p>
+        <ng-template #noClasses>
+          <p>No se encontraron clases.</p>
+        </ng-template>
       </ion-col>
     </ion-row>
   </ng-template>

@@ -10,6 +10,7 @@ import { MultipleChoiceComponent } from 'src/app/components/multiple-choice/mult
 import { TypingComponent } from 'src/app/components/typing/typing.component';
 import { MatchImageComponent } from 'src/app/components/match-image/match-image.component';
 import { MatchPairsComponent } from 'src/app/components/match-pairs/match-pairs.component';
+import { ProgressService } from 'src/app/services/progress.service';
 
 @Component({
   selector: 'app-lesson',
@@ -19,14 +20,14 @@ import { MatchPairsComponent } from 'src/app/components/match-pairs/match-pairs.
   imports: [
     CommonModule,
     IonicModule,
-
-    // ✅ Register components used in the HTML template
     MultipleChoiceComponent,
     TypingComponent,
     MatchImageComponent,
     MatchPairsComponent
   ],
 })
+
+// LessonPage to handle the lesson and its activities
 export class LessonPage implements OnInit {
   classNumber: string | null = null;
   lessonData: any;
@@ -39,9 +40,11 @@ export class LessonPage implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private http: HttpClient,
-    private location: Location
+    private location: Location,
+    private progressService: ProgressService
   ) {}
 
+  // Initialize the component and load the lesson data
   ngOnInit() {
     this.classNumber = this.route.snapshot.paramMap.get('classNumber');
 
@@ -60,6 +63,7 @@ export class LessonPage implements OnInit {
     });
   }
 
+  // Flatten the activities from the lesson data
   flattenActivities(rawActivities: any) {
     this.activities = []; // Clear before flattening again (important!)
     for (const type of Object.keys(rawActivities)) {
@@ -69,6 +73,7 @@ export class LessonPage implements OnInit {
     }
   }
 
+  // Load the current activity based on the index
   loadCurrentActivity() {
     if (this.currentIndex < this.activities.length) {
       const current = this.activities[this.currentIndex];
@@ -77,9 +82,15 @@ export class LessonPage implements OnInit {
     } else {
       this.currentActivity = null;
       this.currentType = 'done';
+      // Mark class as complete when all activities are finished
+      if (this.classNumber) {
+        this.progressService.markClassComplete(this.classNumber);
+        console.log(`Class ${this.classNumber} marked as complete`);
+      }
     }
   }
 
+  // Handle the completion of an activity
   handleAnswer(isCorrect: boolean) {
     if (isCorrect) {
       this.currentIndex++;
@@ -89,6 +100,7 @@ export class LessonPage implements OnInit {
     }
   }
 
+  // Navigate back to the previous page
   goBack() {
     this.location.back();
   }
