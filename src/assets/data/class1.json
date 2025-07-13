@@ -1,0 +1,39 @@
+{
+  "activities": {
+    "multipleChoice": [
+      {
+        "question": "¿Cómo se dice 'Hola' en Bribri?",
+        "word": "Hola",
+        "options": ["Kú", "Diö́", "Cha"],
+        "answer": "Kú"
+      },
+      {
+        "question": "¿Cómo se dice 'Adiós' en Bribri?",
+        "word": "Adiós",
+        "options": ["Kú", "Diö́", "Cha"],
+        "answer": "Diö́"
+      }
+    ],
+    "typing": [
+      {
+        "question": "Escribe 'Buenos días' en Bribri",
+        "word": "Buenos días",
+        "answer": "Kú sĩ̀"
+      },
+      {
+        "question": "Escribe 'Buenas noches' en Bribri",
+        "word": "Buenas noches",
+        "answer": "Cha akë́"
+      }
+    ],
+    "matchPairs": [
+      {
+        "pairs": [
+          { "word": "Kú", "translation": "Hola" },
+          { "word": "Diö́", "translation": "Adiós" },
+          { "word": "Cha", "translation": "Buenas tardes" }
+        ]
+      }
+    ]
+  }
+}

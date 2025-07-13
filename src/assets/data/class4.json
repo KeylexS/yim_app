@@ -1,0 +1,39 @@
+{
+  "activities": {
+    "multipleChoice": [
+      {
+        "question": "¿Cómo se dice 'Padre' en Bribri?",
+        "word": "Padre",
+        "options": ["Papá", "Mamá", "Awá"],
+        "answer": "Papá"
+      },
+      {
+        "question": "¿Cómo se dice 'Madre' en Bribri?",
+        "word": "Madre",
+        "options": ["Papá", "Mamá", "Awá"],
+        "answer": "Mamá"
+      }
+    ],
+    "typing": [
+      {
+        "question": "Escribe 'Hermano' en Bribri",
+        "word": "Hermano",
+        "answer": "Awá"
+      },
+      {
+        "question": "Escribe 'Hijo' en Bribri",
+        "word": "Hijo",
+        "answer": "Wak"
+      }
+    ],
+    "matchPairs": [
+      {
+        "pairs": [
+          { "word": "Papá", "translation": "Padre" },
+          { "word": "Mamá", "translation": "Madre" },
+          { "word": "Awá", "translation": "Hermano" }
+        ]
+      }
+    ]
+  }
+}

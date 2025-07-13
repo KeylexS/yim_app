@@ -11,9 +11,9 @@
     "matchPairs": [
       {
         "pairs": [
-          { "word": "Sárocra", "image": "../../../assets/img/cat.png" },
+          { "word": "Sárocra", "image": "../../../assets/img/horse.png" },
           { "word": "Bís", "image": "../../../assets/img/cow.png" },
-          { "word": "Turí", "image": "../../../assets/img/horse.png" }
+          { "word": "Turí", "image": "../../../assets/img/cat.png" }
         ]
       }
     ],

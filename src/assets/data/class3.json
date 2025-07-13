@@ -1,0 +1,39 @@
+{
+  "activities": {
+    "multipleChoice": [
+      {
+        "question": "¿Cómo se dice 'Cabeza' en Bribri?",
+        "word": "Cabeza",
+        "options": ["Krú", "Tö", "Kë́"],
+        "answer": "Krú"
+      },
+      {
+        "question": "¿Cómo se dice 'Mano' en Bribri?",
+        "word": "Mano",
+        "options": ["Krú", "Tö", "Kë́"],
+        "answer": "Tö"
+      }
+    ],
+    "typing": [
+      {
+        "question": "Escribe 'Ojo' en Bribri",
+        "word": "Ojo",
+        "answer": "Mĩ̀"
+      },
+      {
+        "question": "Escribe 'Pie' en Bribri",
+        "word": "Pie",
+        "answer": "Kë́"
+      }
+    ],
+    "matchPairs": [
+      {
+        "pairs": [
+          { "word": "Krú", "translation": "Cabeza" },
+          { "word": "Tö", "translation": "Mano" },
+          { "word": "Mĩ̀", "translation": "Ojo" }
+        ]
+      }
+    ]
+  }
+}
