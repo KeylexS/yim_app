@@ -39,13 +39,14 @@
   <ng-template #noCompleted>
     <ion-row class="ion-padding">
       <ion-col size="12" class="ion-text-center">
-        <p *ngIf="searchTerm; else noCompletedClasses">
+        <p *ngIf="searchTerm; else noCompletedClasses" class="no-results-message">
           No se encontraron clases completadas que coincidan con "{{ searchTerm }}".
         </p>
         <ng-template #noCompletedClasses>
-          <p>Aún no has completado ninguna clase.</p>
+          <p class="no-results-message">Aún no has completado ninguna clase.</p>
         </ng-template>
       </ion-col>
     </ion-row>
   </ng-template>
+
 </ion-content>

@@ -43,13 +43,14 @@
   <ng-template #noResults>
     <ion-row class="ion-padding">
       <ion-col size="12" class="ion-text-center">
-        <p *ngIf="searchTerm; else noClasses">
+        <p *ngIf="searchTerm; else noClasses" class="no-results-message">
           No se encontraron clases que coincidan con "{{ searchTerm }}".
         </p>
         <ng-template #noClasses>
-          <p>No se encontraron clases.</p>
+          <p class="no-results-message">No se encontraron clases.</p>
         </ng-template>
       </ion-col>
     </ion-row>
   </ng-template>
+
 </ion-content>
