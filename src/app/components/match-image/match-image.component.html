@@ -1,21 +1,18 @@
-<ion-card class="image-question-card">
+<div class="image-question-container ion-padding">
   <img [src]="data.image" alt="Imagen de la actividad" class="main-image" />
 
-  <ion-card-content>
-    <h2 class="question-title ion-text-center">{{ data.question }}</h2>
+  <h2 class="question-title"> {{ data.question }} </h2>
 
-    <div class="options-container">
-      <ion-button
-        *ngFor="let option of data.options"
-        expand="block"
-        shape="round"
-        fill="outline"
-        color="primary"
-        class="option-button"
-        [ngClass]="getClass(option)"
-        (click)="selectOption(option)">
-        {{ option }}
-      </ion-button>
-    </div>
-  </ion-card-content>
-</ion-card>
+  <div class="options-container">
+    <ion-button
+      *ngFor="let option of data.options"
+      expand="block"
+      shape="round"
+      class="option-button"
+      [class.correct]="getClass(option) === 'correct'"
+      [class.wrong]="getClass(option) === 'wrong'"
+      (click)="selectOption(option)">
+      {{ option }}
+    </ion-button>
+  </div>
+</div>
