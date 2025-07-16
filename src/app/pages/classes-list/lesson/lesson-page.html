@@ -1,6 +1,5 @@
 <ion-content>
 
-  <!-- 🔙 Back Button -->
   <div class="back-button-container">
     <img 
       src="../../../../assets/img/back-button.png" 
@@ -9,7 +8,7 @@
       (click)="goBack()" 
     />
   </div>
-  <!-- 🧩 Dynamic Activity Section -->
+
   <ng-container [ngSwitch]="currentType">
 
     <app-multiple-choice
@@ -36,10 +35,16 @@
       (answered)="handleAnswer($event)">
     </app-match-image>
 
-    <!-- 🎉 Final State -->
-    <div *ngSwitchCase="'done'" class="ion-padding">
-      <h2>¡Has completado la lección!</h2>
-      <ion-button expand="block" (click)="goBack()">Volver</ion-button>
+    <div *ngSwitchCase="'done'" class="completed-card">
+      <h2 class="completed-title">¡Felicitaciones!</h2>
+      <p class="completed-message">
+        Felicidades, has logrado finalizar con éxito la clase de hoy. <br />
+        Ahora puedes visualizarla en clases completadas.
+      </p>
+
+      <ion-button class="completed-button" expand="block" (click)="goBack()">
+        Inicio
+      </ion-button>
     </div>
 
   </ng-container>
