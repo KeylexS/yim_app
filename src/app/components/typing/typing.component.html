@@ -1,16 +1,22 @@
 <div class="typing-activity">
-  <h2>{{ data.question }}</h2>
-  <p><strong>{{ data.word }}</strong></p>
+  <h2 class="question-title">{{ data.question }}</h2>
+  <p class="highlight-word"><strong>{{ data.word }}</strong></p>
 
   <ion-input
     [(ngModel)]="userAnswer"
     placeholder="Escribe la traducción"
     [class.correct]="isCorrect === true"
     [class.wrong]="isCorrect === false"
-    type="text">
+    type="text"
+    color="dark">
   </ion-input>
 
-  <ion-button expand="block" (click)="checkAnswer()" [disabled]="!userAnswer">
-    Comprobar
-  </ion-button>
+  <ion-button
+  expand="block"
+  class="neutral-button"
+  (click)="checkAnswer()"
+  [disabled]="!userAnswer">
+  Comprobar
+</ion-button>
+
 </div>
