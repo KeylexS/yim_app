@@ -1,8 +1,6 @@
 <ion-header class="header-section">
   <ion-toolbar>
-    <ion-title class="ion-text-center">
-      Aprende Boruca
-    </ion-title>
+    <ion-title class="ion-text-center">Aprende Boruca</ion-title>
   </ion-toolbar>
   <ion-toolbar>
     <div class="search-section">
@@ -29,9 +27,7 @@
           </ion-card-header>
           <ion-card-content>
             <div class="card-content-row">
-              <div class="description">
-                {{ item.description }}
-              </div>
+              <div class="description">{{ item.description }}</div>
               <img src="assets/img/classcard-icon.png" alt="icon" class="icon-image" />
             </div>
           </ion-card-content>
@@ -53,4 +49,54 @@
     </ion-row>
   </ng-template>
 
+ 
 </ion-content>
+ <!-- FOOTER NAV -->
+  <ion-footer class="custom-footer">
+    <ion-toolbar>
+      <ion-grid>
+        <ion-row class="ion-justify-content-around">
+
+          <!-- Lecciones -->
+          <ion-col size="3" class="footer-tab">
+            <div class="footer-button" [routerLink]="'/classes-list'">
+              <img
+                [src]="currentRoute === '/classes-list'
+                  ? 'assets/img/classes-icon-active.png'
+                  : 'assets/img/classes-icon.png'"
+                alt="Clases"
+                class="footer-icon" />
+              <div class="footer-label">Lecciones</div>
+            </div>
+          </ion-col>
+
+          <!-- Completadas -->
+          <ion-col size="3" class="footer-tab">
+            <div class="footer-button" [routerLink]="'/completed-classes'">
+              <img
+                [src]="currentRoute === '/completed-classes'
+                  ? 'assets/img/completed-icon-active.png'
+                  : 'assets/img/completed-icon.png'"
+                alt="Completadas"
+                class="footer-icon" />
+              <div class="footer-label">Completadas</div>
+            </div>
+          </ion-col>
+
+          <!-- Logros -->
+          <ion-col size="3" class="footer-tab">
+            <div class="footer-button" [routerLink]="'/achievements'">
+              <img
+                [src]="currentRoute === '/achievements'
+                  ? 'assets/img/achievements-icon-active.png'
+                  : 'assets/img/achievements-icon.png'"
+                alt="Logros"
+                class="footer-icon" />
+              <div class="footer-label">Logros</div>
+            </div>
+          </ion-col>
+
+        </ion-row>
+      </ion-grid>
+    </ion-toolbar>
+  </ion-footer>

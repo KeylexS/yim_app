@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule, NgIf, NgFor } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
-import { Router } from '@angular/router';
+import { RouterModule, Router } from '@angular/router';
 import {
   IonContent,
+  IonFooter,
   IonHeader,
   IonButtons,
   IonTitle,
@@ -17,7 +18,9 @@ import {
   IonGrid,
   IonRow,
   IonCol,
-  IonIcon, IonSearchbar, IonButton 
+  IonIcon,
+  IonSearchbar,
+  IonButton
 } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
 import { search } from 'ionicons/icons';
@@ -28,20 +31,41 @@ import { search } from 'ionicons/icons';
   styleUrls: ['./classes-list.page.scss'],
   standalone: true,
   imports: [
-    IonButton, IonSearchbar, 
-    CommonModule, FormsModule, NgIf, NgFor,
-    IonContent, IonHeader, IonButtons, IonTitle, IonToolbar,
-    IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle,
-    IonGrid, IonRow, IonCol, IonIcon
+    CommonModule,
+    FormsModule,
+    NgIf,
+    NgFor,
+    RouterModule, // ✅ Needed for [routerLink]
+    // Ionic components
+    IonButton,
+    IonSearchbar,
+    IonContent,
+    IonFooter, // ✅ Needed to use <ion-footer>
+    IonHeader,
+    IonButtons,
+    IonTitle,
+    IonToolbar,
+    IonCard,
+    IonCardContent,
+    IonCardHeader,
+    IonCardSubtitle,
+    IonCardTitle,
+    IonGrid,
+    IonRow,
+    IonCol,
+    IonIcon
   ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA] // ✅ Optional, for safety with Ionic elements
 })
 export class ClassesListPage implements OnInit {
   searchTerm: string = '';
   classes: any[] = [];
   allClasses: any[] = [];
+  currentRoute: string;
 
   constructor(private http: HttpClient, private router: Router) {
     addIcons({ search });
+    this.currentRoute = this.router.url;
   }
 
   ngOnInit() {
