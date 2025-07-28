@@ -110,3 +110,49 @@ ion-icon {
   font-size: 0.9rem;
   padding: 8px 16px;
 }
+
+/* Footer styles - pinned at bottom */
+.custom-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  background-color: #fff;
+  box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer tab styles */
+.footer-tab {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 0;
+}
+
+.footer-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+}
+
+.footer-icon {
+  width: 28px;
+  height: 28px;
+  margin-bottom: 4px;
+}
+
+.footer-label {
+  font-size: 0.75rem;
+  color: #333;
+  font-family: 'Fredoka', sans-serif;
+  font-weight: 600;
+}
+
+/* Highlight active footer label */
+.footer-button.active .footer-label {
+  color: #e74c3c; /* Active color */
+  font-weight: 700;
+}

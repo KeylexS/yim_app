@@ -1,0 +1,49 @@
+ion-content {
+  --background: #EEECEC;
+}
+
+.custom-footer {
+  background: #EEECEC;
+  --background: #EEECEC;
+  --box-shadow: none;
+  box-shadow: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 56px;
+  z-index: 10;
+}
+
+.footer-tab {
+  text-align: center;
+}
+
+.footer-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.footer-icon {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+  margin: 0 auto 4px auto;
+}
+
+.footer-label {
+  font-size: 8px;
+  line-height: 1.2;
+  font-weight: 700;
+  color: #222;
+}
+
+.content-wrapper {
+  padding: 16px;
+  font-family: 'Fredoka', sans-serif;
+  color: #333;
+}
