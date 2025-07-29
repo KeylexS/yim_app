@@ -6,7 +6,7 @@
       "description": "Completa una lección sin errores",
       "icon": "trophy",
       "category": "performance",
-      "rarity": "common"
+      "rarity": "común"
     },
     {
       "id": "speed_demon",
@@ -14,7 +14,7 @@
       "description": "Completa una lección en menos de 2 minutos",
       "icon": "flash",
       "category": "speed",
-      "rarity": "rare"
+      "rarity": "raro"
     },
     {
       "id": "cat_spotter",
@@ -22,7 +22,7 @@
       "description": "Encuentra la imagen de un gato en una actividad",
       "icon": "paw",
       "category": "special",
-      "rarity": "uncommon"
+      "rarity": "poco común"
     },
     {
       "id": "first_lesson",
@@ -30,7 +30,7 @@
       "description": "Completa tu primera lección",
       "icon": "star",
       "category": "milestone",
-      "rarity": "common"
+      "rarity": "común"
     },
     {
       "id": "five_lessons",
@@ -38,7 +38,7 @@
       "description": "Completa 5 lecciones",
       "icon": "ribbon",
       "category": "milestone",
-      "rarity": "uncommon"
+      "rarity": "poco común"
     },
     {
       "id": "ten_lessons",
@@ -46,7 +46,7 @@
       "description": "Completa 10 lecciones",
       "icon": "medal",
       "category": "milestone",
-      "rarity": "rare"
+      "rarity": "raro"
     },
     {
       "id": "typing_master",
@@ -54,7 +54,7 @@
       "description": "Completa 5 actividades de escritura perfectas seguidas",
       "icon": "create",
       "category": "skill",
-      "rarity": "epic"
+      "rarity": "épico"
     },
     {
       "id": "memory_expert",
@@ -62,7 +62,7 @@
       "description": "Completa 3 actividades de emparejamiento sin errores",
       "icon": "bulb",
       "category": "skill",
-      "rarity": "rare"
+      "rarity": "raro"
     },
     {
       "id": "quick_learner",
@@ -70,7 +70,7 @@
       "description": "Responde correctamente en menos de 3 segundos",
       "icon": "time",
       "category": "speed",
-      "rarity": "uncommon"
+      "rarity": "poco común"
     },
     {
       "id": "comeback_king",
@@ -78,7 +78,7 @@
       "description": "Completa una lección después de 3 errores consecutivos",
       "icon": "refresh",
       "category": "perseverance",
-      "rarity": "rare"
+      "rarity": "raro"
     }
   ]
 }

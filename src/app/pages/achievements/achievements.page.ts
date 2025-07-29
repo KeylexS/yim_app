@@ -80,10 +80,10 @@ export class AchievementsPage implements OnInit {
 
   getRarityColor(rarity: string): string {
     const colors = {
-      'common': 'medium',
-      'uncommon': 'success', 
-      'rare': 'primary',
-      'epic': 'warning'
+      'común': 'medium',
+      'poco común': 'success',
+      'raro': 'primary',
+      'épico': 'warning'
     };
     return colors[rarity as keyof typeof colors] || 'medium';
   }

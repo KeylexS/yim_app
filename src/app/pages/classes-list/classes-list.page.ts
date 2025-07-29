@@ -35,12 +35,11 @@ import { search } from 'ionicons/icons';
     FormsModule,
     NgIf,
     NgFor,
-    RouterModule, // ✅ Needed for [routerLink]
-    // Ionic components
+    RouterModule,
     IonButton,
     IonSearchbar,
     IonContent,
-    IonFooter, // ✅ Needed to use <ion-footer>
+    IonFooter,
     IonHeader,
     IonButtons,
     IonTitle,
