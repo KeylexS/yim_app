@@ -1,0 +1,84 @@
+{
+  "achievements": [
+    {
+      "id": "perfect_lesson",
+      "name": "Sin Fallas",
+      "description": "Completa una lección sin errores",
+      "icon": "trophy",
+      "category": "performance",
+      "rarity": "common"
+    },
+    {
+      "id": "speed_demon",
+      "name": "Velocista",
+      "description": "Completa una lección en menos de 2 minutos",
+      "icon": "flash",
+      "category": "speed",
+      "rarity": "rare"
+    },
+    {
+      "id": "cat_spotter",
+      "name": "Mira un Gato",
+      "description": "Encuentra la imagen de un gato en una actividad",
+      "icon": "paw",
+      "category": "special",
+      "rarity": "uncommon"
+    },
+    {
+      "id": "first_lesson",
+      "name": "Primeros Pasos",
+      "description": "Completa tu primera lección",
+      "icon": "star",
+      "category": "milestone",
+      "rarity": "common"
+    },
+    {
+      "id": "five_lessons",
+      "name": "En Marcha",
+      "description": "Completa 5 lecciones",
+      "icon": "ribbon",
+      "category": "milestone",
+      "rarity": "uncommon"
+    },
+    {
+      "id": "ten_lessons",
+      "name": "Imparable",
+      "description": "Completa 10 lecciones",
+      "icon": "medal",
+      "category": "milestone",
+      "rarity": "rare"
+    },
+    {
+      "id": "typing_master",
+      "name": "Maestro del Teclado",
+      "description": "Completa 5 actividades de escritura perfectas seguidas",
+      "icon": "create",
+      "category": "skill",
+      "rarity": "epic"
+    },
+    {
+      "id": "memory_expert",
+      "name": "Experto en Memoria",
+      "description": "Completa 3 actividades de emparejamiento sin errores",
+      "icon": "bulb",
+      "category": "skill",
+      "rarity": "rare"
+    },
+    {
+      "id": "quick_learner",
+      "name": "Aprendiz Rápido",
+      "description": "Responde correctamente en menos de 3 segundos",
+      "icon": "time",
+      "category": "speed",
+      "rarity": "uncommon"
+    },
+    {
+      "id": "comeback_king",
+      "name": "Rey del Regreso",
+      "description": "Completa una lección después de 3 errores consecutivos",
+      "icon": "refresh",
+      "category": "perseverance",
+      "rarity": "rare"
+    }
+  ]
+}

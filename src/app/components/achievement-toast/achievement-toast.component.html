@@ -1,0 +1,33 @@
+<div class="achievement-toast" [class.visible]="isVisible" *ngIf="achievement">
+  <ion-card class="achievement-card">
+    <ion-card-content>
+      <div class="achievement-content">
+        <div class="achievement-icon">
+          <ion-icon 
+            [name]="achievement.icon" 
+            [color]="getRarityColor(achievement.rarity)">
+          </ion-icon>
+        </div>
+        
+        <div class="achievement-info">
+          <div class="achievement-header">
+            <h3>¡Logro Desbloqueado!</h3>
+            <ion-badge [color]="getRarityColor(achievement.rarity)">
+              {{ achievement.rarity | titlecase }}
+            </ion-badge>
+          </div>
+          <h4>{{ achievement.name }}</h4>
+          <p>{{ achievement.description }}</p>
+        </div>
+        
+        <ion-button 
+          fill="clear" 
+          size="small" 
+          (click)="onDismiss()"
+          class="close-button">
+          <ion-icon name="close"></ion-icon>
+        </ion-button>
+      </div>
+    </ion-card-content>
+  </ion-card>
+</div>
