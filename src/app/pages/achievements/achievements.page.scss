@@ -46,4 +46,171 @@ ion-content {
   padding: 16px;
   font-family: 'Fredoka', sans-serif;
   color: #333;
+  margin-bottom: 60px;
+}
+
+/* Estilos para la página de logros */
+.progress-card {
+  margin-bottom: 20px;
+  
+  .progress-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    
+    h3 {
+      margin: 0;
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: var(--ion-color-success);
+    }
+    
+    p {
+      margin: 0;
+      color: var(--ion-color-medium);
+    }
+  }
+  
+  .progress-percentage {
+    text-align: center;
+    margin-top: 8px;
+    font-size: 0.9rem;
+    color: var(--ion-color-medium);
+  }
+}
+
+.achievements-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+.achievement-card {
+  margin: 0;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  
+  &.unlocked {
+    background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);
+    
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+  }
+  
+  &.locked {
+    background: #f5f5f5;
+    opacity: 0.7;
+    
+    .achievement-name, 
+    .achievement-description {
+      color: var(--ion-color-medium);
+    }
+  }
+  
+  ion-card-content {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px;
+  }
+}
+
+.achievement-icon {
+  flex-shrink: 0;
+  
+  ion-icon {
+    font-size: 2.5rem;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(var(--ion-color-primary-rgb), 0.1);
+    border-radius: 50%;
+    padding: 8px;
+  }
+}
+
+.achievement-info {
+  flex: 1;
+  
+  .achievement-name {
+    margin: 0 0 4px 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--ion-color-dark);
+  }
+  
+  .achievement-description {
+    margin: 0 0 8px 0;
+    font-size: 0.9rem;
+    color: var(--ion-color-medium);
+    line-height: 1.3;
+  }
+  
+  .achievement-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    
+    .rarity-badge {
+      align-self: flex-start;
+      font-size: 0.7rem;
+      padding: 4px 8px;
+      border-radius: 12px;
+    }
+    
+    .unlock-date {
+      font-size: 0.8rem;
+    }
+  }
+}
+
+.no-achievements {
+  text-align: center;
+  padding: 40px 20px;
+  
+  ion-icon {
+    margin-bottom: 16px;
+  }
+  
+  h2 {
+    color: var(--ion-color-dark);
+    margin-bottom: 8px;
+  }
+  
+  p {
+    color: var(--ion-color-medium);
+    line-height: 1.4;
+  }
+}
+
+@media (min-width: 768px) {
+  .achievements-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+ion-title {
+  font-family: 'Fredoka', sans-serif !important;
+  font-size: 1rem;
+  padding-top: 10px;
+  color: #333;
+  background-color: #EEECEC;
+}
+
+ion-header {
+  background-color: #EEECEC !important;
+  --background: #EEECEC !important; 
+  --box-shadow: none; 
+  box-shadow: none;
+}
+
+ion-toolbar {
+  background-color: #EEECEC !important; 
+  --background: #EEECEC !important;
 }
