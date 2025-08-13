@@ -2,21 +2,22 @@
   <h2 class="question-title">{{ data.question }}</h2>
   <p class="highlight-word"><strong>{{ data.word }}</strong></p>
 
-  <ion-input
-    [(ngModel)]="userAnswer"
+  <!-- Using plain HTML input for Android typing compatibility -->
+  <input
+    class="custom-input"
+    [value]="userAnswer"
+    (input)="updateAnswer($event)"
     placeholder="Escribe la traducción"
     [class.correct]="isCorrect === true"
     [class.wrong]="isCorrect === false"
     type="text"
-    color="dark">
-  </ion-input>
+  />
 
   <ion-button
-  expand="block"
-  class="neutral-button"
-  (click)="checkAnswer()"
-  [disabled]="!userAnswer">
-  Comprobar
-</ion-button>
-
+    expand="block"
+    class="neutral-button"
+    (click)="checkAnswer()"
+    [disabled]="!userAnswer.trim()">
+    Comprobar
+  </ion-button>
 </div>
