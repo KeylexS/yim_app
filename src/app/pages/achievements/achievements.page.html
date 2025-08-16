@@ -9,7 +9,7 @@
 
     <div class="achievements-grid">
       <ion-card 
-        *ngFor="let achievement of achievements" 
+        *ngFor="let achievement of achievements; trackBy: trackByAchievementId" 
         class="achievement-card"
         [class.unlocked]="achievement.isUnlocked"
         [class.locked]="!achievement.isUnlocked">

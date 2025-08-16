@@ -1,8 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, OnDestroy, ChangeDetectorRef } from '@angular/core';
 import { CommonModule, NgIf, NgFor } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { Router, RouterModule } from '@angular/router';
+import { Subject, takeUntil } from 'rxjs';
+import { CacheService } from 'src/app/services/cache.service';
 import {
   IonContent, IonHeader, IonToolbar, IonTitle, IonCard, IonCardHeader,
   IonCardSubtitle, IonCardTitle, IonCardContent, IonGrid, IonRow, IonCol,
@@ -12,7 +14,7 @@ import {
 import { ProgressService } from 'src/app/services/progress.service';
 
 interface ClassInfo {
-  class_number: string;  // or number if your JSON uses numbers
+  class_number: string;
   name: string;
   description: string;
   category: string;
@@ -32,7 +34,8 @@ interface ClassInfo {
     IonGrid, IonRow, IonCol, IonButton, IonSearchbar, IonFooter
   ],
 })
-export class CompletedClassesPage implements OnInit {
+export class CompletedClassesPage implements OnInit, OnDestroy {
+  private destroy$ = new Subject<void>();
   completedClasses: ClassInfo[] = [];
   allCompletedClasses: ClassInfo[] = [];
   searchTerm: string = '';
@@ -41,20 +44,24 @@ export class CompletedClassesPage implements OnInit {
   constructor(
     private http: HttpClient,
     private router: Router,
-    private progressService: ProgressService
+    private progressService: ProgressService,
+    private cacheService: CacheService,
+    private cdr: ChangeDetectorRef
   ) {
-    // Initialize currentRoute only once from the current URL
     this.currentRoute = this.router.url;
   }
 
   ngOnInit() {
-    this.http.get<{ classes: ClassInfo[] }>('assets/data/Clases_info.json')
+    this.cacheService.get<{ classes: ClassInfo[] }>('assets/data/Clases_info.json')
+      .pipe(takeUntil(this.destroy$))
       .subscribe((data) => {
         const completedClassNumbers = this.progressService.getCompletedClasses();
         this.allCompletedClasses = data.classes.filter(c =>
           completedClassNumbers.includes(c.class_number)
         );
         this.completedClasses = [...this.allCompletedClasses];
+
+        this.cdr.detectChanges();
       });
   }
 
@@ -69,5 +76,14 @@ export class CompletedClassesPage implements OnInit {
 
   openClass(classNumber: string) {
     this.router.navigate(['/lesson', classNumber]);
+  }
+
+  trackByClassNumber(index: number, classItem: ClassInfo): string {
+    return classItem.class_number;
+  }
+
+  ngOnDestroy() {
+    this.destroy$.next();
+    this.destroy$.complete();
   }
 }

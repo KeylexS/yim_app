@@ -18,7 +18,7 @@
 <ion-content [fullscreen]="true" class="classes-content">
   <ion-grid *ngIf="classes?.length; else noResults">
     <ion-row>
-      <ion-col size="12" *ngFor="let item of classes">
+      <ion-col size="12" *ngFor="let item of classes; trackBy: trackByClassNumber">
         <ion-card class="class-card" (click)="openClass(item.class_number)">
           <ion-card-header>
             <ion-card-title>

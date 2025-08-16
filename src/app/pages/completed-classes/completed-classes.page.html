@@ -16,7 +16,7 @@
 
   <ion-grid *ngIf="completedClasses?.length; else noCompleted">
     <ion-row>
-      <ion-col size="12" *ngFor="let item of completedClasses">
+      <ion-col size="12" *ngFor="let item of completedClasses; trackBy: trackByClassNumber">
         <ion-card class="class-card completed" (click)="openClass(item.class_number)">
           <ion-card-header>
             <ion-card-title>
