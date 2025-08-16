@@ -4,6 +4,20 @@
   gap: 12px;
 }
 
+.question-title {
+  color: #000000 !important;
+  margin: 0 0 8px 0;
+}
+
+.highlight-word {
+  color: #000000 !important;
+  margin: 0 0 12px 0;
+}
+
+.highlight-word strong {
+  color: #000000 !important;
+}
+
 .custom-input {
   padding: 12px;
   border-radius: 8px;
@@ -11,14 +25,18 @@
   font-size: 16px;
   width: 100%;
   box-sizing: border-box;
+  background-color: #ffffff !important;
+  color: #000000 !important;
 }
 
 .custom-input.correct {
   border-color: green;
-  background-color: #e6ffe6;
+  background-color: #e6ffe6 !important;
+  color: #000000 !important;
 }
 
 .custom-input.wrong {
   border-color: red;
-  background-color: #ffe6e6;
+  background-color: #ffe6e6 !important;
+  color: #000000 !important;
 }

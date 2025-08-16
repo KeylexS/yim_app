@@ -1,5 +1,8 @@
 ion-content {
   --background: #EEECEC;
+  // Performance optimization: Use hardware acceleration
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }
 
 
@@ -42,7 +45,6 @@ ion-content {
   color: #333;
 }
 
-/* Estilos para la página de logros */
 .progress-card {
   margin-bottom: 20px;
   
@@ -85,11 +87,14 @@ ion-content {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   
+  will-change: transform, box-shadow;
+  transform: translateZ(0);
+  
   &.unlocked {
     background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);
     
     &:hover {
-      transform: translateY(-2px);
+      transform: translateY(-2px) translateZ(0);
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     }
   }
