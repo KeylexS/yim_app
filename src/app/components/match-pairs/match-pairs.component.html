@@ -31,7 +31,7 @@
           [class.danger]="getImageColor(pair.image) === 'danger'"
           (click)="selectImage(pair.image)">
           <div class="match-content">
-            <img [src]="pair.image" class="pair-image" />
+            <img [src]="pair.image" class="pair-image" loading="lazy" />
           </div>
         </ion-item>
       </ion-list>

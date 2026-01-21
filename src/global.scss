@@ -54,14 +54,11 @@ ion-footer {
   box-shadow: none !important;
 }
 
-// SUPER optimized background gradient
+// Background gradient optimization
 html {
   background: linear-gradient(to bottom, #ffe0b3, #b3d9ff) no-repeat fixed;
   background-size: 100% 100vh;
   min-height: 100vh;
-  will-change: auto;
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
 }
 
 body {
@@ -75,39 +72,22 @@ body {
 ion-app {
   background: transparent !important;
   min-height: 100vh;
-  contain: layout style paint;
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
 }
 
-// ULTRA optimized page transitions
+// Optimized page transitions
 ion-router-outlet {
   background: transparent !important;
-  contain: layout style paint;
-  isolation: isolate;
   
   .ion-page {
     background: transparent !important;
-    will-change: transform, opacity;
-    -webkit-transform: translateZ(0);
-    transform: translateZ(0);
-    contain: layout style paint;
+    will-change: transform;
   }
 }
 
-// Prevent repaints and reflows
-ion-tab-bar, ion-tabs {
-  contain: layout style paint;
-  will-change: transform;
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
-}
-
-// Aggressive header styling - target everything possible
+// Header styling
 ion-header {
   background: transparent !important;
   --background: transparent !important;
-  --ion-background-color: transparent !important;
   position: sticky !important;
   top: 0 !important;
   z-index: 1000 !important;
@@ -116,87 +96,13 @@ ion-header {
 ion-toolbar {
   background: transparent !important;
   --background: transparent !important;
-  --ion-background-color: transparent !important;
-  --ion-toolbar-background: transparent !important;
-  --ion-toolbar-color: inherit !important;
 }
 
-// For Capacitor status bar
-.statusbar-overlay {
+ion-title {
   background: transparent !important;
+  color: #333 !important;
 }
 
-// Platform specific overrides
-.ios ion-header,
-.md ion-header {
-  background: transparent !important;
-}
-
-ion-header, 
-ion-header.ios, 
-ion-header.md {
-  background: transparent !important;
-  --background: transparent !important;
-  
-  ion-toolbar,
-  ion-toolbar.ios,
-  ion-toolbar.md {
-    background: transparent !important;
-    --background: transparent !important;
-    --ion-color-base: transparent !important;
-    --color: inherit !important;
-    --ion-toolbar-background: transparent !important;
-    --ion-toolbar-color: inherit !important;
-    
-    ion-title,
-    ion-title.ios,
-    ion-title.md {
-      background: transparent !important;
-      --background: transparent !important;
-      --color: inherit !important;
-    }
-  }
-}
-
-// Target specific page headers
-app-achievements ion-header,
-app-classes-list ion-header,
-app-lesson ion-header,
-app-home-page ion-header {
-  background: transparent !important;
-  --background: transparent !important;
-  
-  ion-toolbar {
-    background: transparent !important;
-    --background: transparent !important;
-  }
-}
-
-ion-searchbar {
-  background: transparent !important;
-  --background: transparent !important;
-  --ion-item-background: transparent !important;
-  
-  .searchbar-input-container {
-    background: rgba(255, 255, 255, 0.2) !important;
-  }
-}
-
-ion-content {
-  background: transparent !important;
-  --background: transparent !important;
-}
-
-ion-footer ion-toolbar {
-  background-color: #EEECEC !important;
-  --background: #EEECEC !important;
-  --box-shadow: none !important;
-  box-shadow: none !important;
-  border-radius: 20px 20px 0 0 !important;
-  margin: 0 10px !important;
-}
-
-// Make search input field white but keep container transparent
 ion-searchbar {
   --background: transparent !important;
   background: transparent !important;
@@ -208,83 +114,30 @@ ion-searchbar {
   }
 }
 
-ion-title {
-  --background: rgba(255, 255, 255, 0.95) !important;
-  background: rgba(255, 255, 255, 0.95) !important;
-  border-radius: 8px !important;
-  margin: 4px 8px !important;
-  padding: 4px 8px !important;
-}
-
-// Make sure header area blocks content behind it
-ion-header::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: -10px;
-  background: linear-gradient(to bottom, 
-    rgba(255, 224, 179, 0.95) 0%, 
-    rgba(255, 224, 179, 0.8) 70%, 
-    transparent 100%);
-  z-index: -1;
-  will-change: auto;
-}
-
-// ULTRA performance optimizations
-* {
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  -webkit-perspective: 1000px;
-  perspective: 1000px;
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-// GPU acceleration for everything
-ion-content, ion-header, ion-toolbar, ion-footer, 
-ion-card, ion-button, ion-searchbar, ion-title {
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
-  will-change: transform, opacity;
-  contain: layout style paint;
-}
-
-// Optimized page transitions
-.ion-page-invisible {
-  opacity: 0;
-  visibility: hidden;
-}
-
-.ion-page {
-  transition: opacity 0.15s cubic-bezier(0.4, 0.0, 0.2, 1);
-  will-change: transform, opacity;
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
-}
-
-// Scroll performance boost
 ion-content {
+  background: transparent !important;
+  --background: transparent !important;
   -webkit-overflow-scrolling: touch;
   scroll-behavior: smooth;
   overscroll-behavior: contain;
 }
 
+ion-footer ion-toolbar {
+  background-color: #EEECEC !important;
+  --background: #EEECEC !important;
+  --box-shadow: none !important;
+  box-shadow: none !important;
+  border-radius: 20px 20px 0 0 !important;
+  margin: 0 10px !important;
+}
+
 // Image optimization
 img, ion-img {
-  image-rendering: optimizeSpeed;
   image-rendering: -webkit-optimize-contrast;
-  will-change: transform;
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
 }
 
 // List performance
 ion-list, ion-virtual-scroll {
   contain: layout style paint;
-  will-change: scroll-position;
 }
 

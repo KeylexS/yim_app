@@ -3,18 +3,26 @@ import { HttpInterceptor, HttpRequest, HttpHandler, HttpResponse, HttpEvent } fr
 import { Observable, of } from 'rxjs';
 import { tap, shareReplay } from 'rxjs/operators';
 
+interface CacheEntry {
+  response: Observable<HttpEvent<any>>;
+  timestamp: number;
+}
+
 @Injectable()
 export class PerformanceInterceptor implements HttpInterceptor {
-  private cache = new Map<string, Observable<HttpEvent<any>>>();
+  private cache = new Map<string, CacheEntry>();
+  private cacheTimeout = 10 * 60 * 1000; // 10 minutes cache expiration
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
 
     if (req.method === 'GET' && req.url.includes('assets/data/')) {
-      const cachedResponse = this.cache.get(req.url);
+      const cachedEntry = this.cache.get(req.url);
+      const now = Date.now();
       
-      if (cachedResponse) {
+      // Check if cache exists and hasn't expired
+      if (cachedEntry && (now - cachedEntry.timestamp) < this.cacheTimeout) {
         console.log(`Serving from cache: ${req.url}`);
-        return cachedResponse;
+        return cachedEntry.response;
       }
 
       const response = next.handle(req).pipe(
@@ -22,11 +30,14 @@ export class PerformanceInterceptor implements HttpInterceptor {
         tap((event) => {
           if (event instanceof HttpResponse) {
             console.log(`Caching response for: ${req.url}`);
+            this.cache.set(req.url, {
+              response: of(event),
+              timestamp: now
+            });
           }
         })
       );
 
-      this.cache.set(req.url, response);
       return response;
     }
 
@@ -35,5 +46,18 @@ export class PerformanceInterceptor implements HttpInterceptor {
 
   clearCache(): void {
     this.cache.clear();
+  }
+
+  clearExpiredCache(): void {
+    const now = Date.now();
+    const keysToDelete: string[] = [];
+    
+    this.cache.forEach((entry, key) => {
+      if ((now - entry.timestamp) >= this.cacheTimeout) {
+        keysToDelete.push(key);
+      }
+    });
+
+    keysToDelete.forEach(key => this.cache.delete(key));
   }
 }

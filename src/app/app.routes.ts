@@ -1,4 +1,4 @@
-import { Routes } from '@angular/router';
+import { Routes, PreloadAllModules } from '@angular/router';
 
 // Define las rutas de la aplicación
 // Se utiliza loadComponent para cargar los componentes
