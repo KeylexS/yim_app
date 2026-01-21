@@ -44,12 +44,12 @@
 }
 
 .custom-footer {
-  background: #EEECEC;
+  background: #ffffff;
 }
 
 ion-footer {
-  background-color: #EEECEC !important;
-  --background: #EEECEC !important;
+  background-color: #ffffff !important;
+  --background: #ffffff !important;
   --box-shadow: none !important;
   box-shadow: none !important;
 }
@@ -80,22 +80,25 @@ ion-router-outlet {
   
   .ion-page {
     background: transparent !important;
-    will-change: transform;
+    will-change: transform, opacity;
+    -webkit-transition: -webkit-transform 300ms cubic-bezier(.22,.9,.3,1), opacity 220ms ease;
+    transition: transform 300ms cubic-bezier(.22,.9,.3,1), opacity 220ms ease;
   }
 }
 
 // Header styling
-ion-header {
-  background: transparent !important;
-  --background: transparent !important;
+ ion-header {
+  background: #ffffff !important;
+  --background: #ffffff !important;
   position: sticky !important;
   top: 0 !important;
   z-index: 1000 !important;
-}
+  box-shadow: 0 1px 0 rgba(0,0,0,0.04);
+ }
 
 ion-toolbar {
-  background: transparent !important;
-  --background: transparent !important;
+  background: #ffffff !important;
+  --background: #ffffff !important;
 }
 
 ion-title {
@@ -104,14 +107,21 @@ ion-title {
 }
 
 ion-searchbar {
-  --background: transparent !important;
+  --background: #ffffff !important;
   background: transparent !important;
-  
+  position: relative;
+  z-index: 1001 !important;
+
   .searchbar-input {
     --background: #ffffff !important;
     background: #ffffff !important;
     border-radius: 8px !important;
   }
+}
+
+/* Ensure page content doesn't scroll visually underneath the header */
+ion-content {
+  padding-top: calc(var(--ion-safe-area-top, 0px) + 56px) !important;
 }
 
 ion-content {
@@ -123,12 +133,13 @@ ion-content {
 }
 
 ion-footer ion-toolbar {
-  background-color: #EEECEC !important;
-  --background: #EEECEC !important;
+  background-color: #ffffff !important;
+  --background: #ffffff !important;
   --box-shadow: none !important;
   box-shadow: none !important;
-  border-radius: 20px 20px 0 0 !important;
-  margin: 0 10px !important;
+  border-radius: 0 !important;
+  margin: 0 !important;
+  width: 100% !important;
 }
 
 // Image optimization
