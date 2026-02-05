@@ -2,37 +2,34 @@
   "activities": {
     "multipleChoice": [
       {
-        "question": "¿Cómo se dice 'Hola' en Bribri?",
-        "word": "Hola",
-        "options": ["Kú", "Diö́", "Cha"],
-        "answer": "Kú"
-      },
-      {
-        "question": "¿Cómo se dice 'Adiós' en Bribri?",
-        "word": "Adiós",
-        "options": ["Kú", "Diö́", "Cha"],
-        "answer": "Diö́"
-      }
-    ],
-    "typing": [
-      {
-        "question": "Escribe 'Buenos días' en Bribri",
-        "word": "Buenos días",
-        "answer": "Kú sĩ̀"
-      },
-      {
-        "question": "Escribe 'Buenas noches' en Bribri",
-        "word": "Buenas noches",
-        "answer": "Cha akë́"
+        "question": "Acierta la palabra",
+        "word": "Perro",
+        "options": ["Aúj", "Cuchi", "Cró"],
+        "answer": "Aúj"
       }
     ],
     "matchPairs": [
       {
         "pairs": [
-          { "word": "Kú", "translation": "Hola" },
-          { "word": "Diö́", "translation": "Adiós" },
-          { "word": "Cha", "translation": "Buenas tardes" }
+          { "word": "Sárocra", "image": "../../../assets/img/horse.png" },
+          { "word": "Bís", "image": "../../../assets/img/cow.png" },
+          { "word": "Turí", "image": "../../../assets/img/cat.png" }
         ]
+      }
+    ],
+    "matchImage": [
+      {
+        "question": "¿A qué corresponde la imagen?",
+        "image": "assets/img/chicken.png",
+        "options": ["Dibí cun", "Cró", "Cuchi"],
+        "answer": "Cró"
+      }
+    ],
+    "typing": [
+      {
+        "question": "Escribe la traducción",
+        "word": "Sarócra",
+        "answer": "Caballo"
       }
     ]
   }

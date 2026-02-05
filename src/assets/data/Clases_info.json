@@ -2,48 +2,12 @@
     "classes":
     [
         {
-            "_id":"63740f5fe2c75d8744f80a32",
-            "class_number": "1",
-            "name":"Saludos y Despedidas",
-            "description":"En esta clase, aprenderemos acerca de saludos!",
-            "category":"class",
-            "image":"http://peticiones.online/images/products/image07.png",
-            "active":true
-        },
-        {
             "_id":"63740f5fe2c75d8744f80a33",
-            "class_number": "2",
+            "class_number": "1",
             "name":"Animales",
             "description":"Sarócra, Yúj, Cuí, ¿Sabes cuáles animales son?",
             "category":"class",
             "image":"http://peticiones.online/images/products/image08.png",
-            "active":true
-        },
-        {
-            "_id":"63740f5fe2c75d8744f80a34",
-            "class_number": "3",
-            "name":"Partes del Cuerpo",
-            "description":"Hoy aprenderemos el nombre de las partes del cuerpo",
-            "category":"class",
-            "image":"http://peticiones.online/images/products/image09.png",
-            "active":true
-        },
-        {
-            "_id":"63740f5fe2c75d8744f80a35",
-            "class_number": "4",
-            "name":"Miembros de la familia",
-            "description":"Sabes el significadod de Crá^ Rojc?",
-            "category":"class",
-            "image":"http://peticiones.online/images/products/image10.png",
-            "active":true
-        },
-        {
-            "_id":"63740f5fe2c75d8744f80a36",
-            "class_number": "5",
-            "name":"Profesiones",
-            "description":"Qué deseas hacer cuando crezcas?",
-            "category":"class",
-            "image":"http://peticiones.online/images/products/image11.png",
             "active":true
         }
     ]
