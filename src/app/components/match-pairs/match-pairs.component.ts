@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
+import { Component, Input, Output, EventEmitter, OnInit, OnChanges, SimpleChanges } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
 
@@ -17,7 +17,7 @@ interface MatchPair {
 })
 
 // MatchPairsComponent to handle matching pairs of words and images
-export class MatchPairsComponent implements OnInit {
+export class MatchPairsComponent implements OnInit, OnChanges {
   @Input() data!: { pairs: MatchPair[] };
   @Output() completed = new EventEmitter<boolean>();
 
@@ -34,6 +34,17 @@ export class MatchPairsComponent implements OnInit {
   // Initialize the component with shuffled pairs
   ngOnInit() {
     this.initializeShuffledArrays();
+  }
+
+  ngOnChanges(changes: SimpleChanges) {
+    if (changes['data']) {
+      this.selectedWord = null;
+      this.matched = {};
+      this.completedPairs = new Set();
+      this.correctMatches = new Set();
+      this.incorrectWord = null;
+      this.initializeShuffledArrays();
+    }
   }
   
   // Shuffle the pairs for random display
