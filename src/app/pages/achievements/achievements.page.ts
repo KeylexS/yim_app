@@ -1,18 +1,15 @@
-import { Component, OnInit, ChangeDetectionStrategy, OnDestroy, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
 import { Router, RouterModule } from '@angular/router';
-import { HttpClient } from '@angular/common/http';
 import { Subject, takeUntil } from 'rxjs';
 import {
   IonContent, IonHeader, IonTitle, IonToolbar,
-  IonGrid, IonRow, IonCol, IonCard, IonCardHeader, IonCardTitle,
-  IonCardContent, IonIcon, IonBadge, IonProgressBar, IonText, IonFooter
+  IonGrid, IonRow, IonCol, IonCard, IonCardContent, IonIcon, IonFooter
 } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
 import { 
-  trophy, flash, paw, star, ribbon, medal, create, 
-  bulb, time, refresh, lockClosed 
+  trophy, flash, paw, star, ribbon, medal, lockClosed,
+  create, bulb, time, refresh
 } from 'ionicons/icons';
 
 import { AchievementService, Achievement } from 'src/app/services/achievement.service';
@@ -24,11 +21,9 @@ import { CacheService } from 'src/app/services/cache.service';
   styleUrls: ['./achievements.page.scss'],
   standalone: true,
   imports: [
-    CommonModule, FormsModule, RouterModule,
+    CommonModule, RouterModule,
     IonContent, IonHeader, IonTitle, IonToolbar,
-    IonGrid, IonRow, IonCol, IonCard,
-    IonCardHeader, IonCardTitle, IonCardContent,
-    IonIcon, IonBadge, IonProgressBar, IonText, IonFooter
+    IonGrid, IonRow, IonCol, IonCard, IonCardContent, IonIcon, IonFooter
   ],
 })
 export class AchievementsPage implements OnInit, OnDestroy {
@@ -41,17 +36,12 @@ export class AchievementsPage implements OnInit, OnDestroy {
 
   constructor(
     private router: Router,
-    private http: HttpClient,
     private achievementService: AchievementService,
-    private cacheService: CacheService,
-    private cdr: ChangeDetectorRef
+    private cacheService: CacheService
   ) {
     this.currentRoute = this.router.url;
     
-    addIcons({
-      trophy, flash, paw, star, ribbon, medal, 
-      create, time, refresh, lockClosed
-    });
+    addIcons({ trophy, flash, paw, star, ribbon, medal, lockClosed, create, bulb, time, refresh });
   }
 
   ngOnInit() {
@@ -74,33 +64,17 @@ export class AchievementsPage implements OnInit, OnDestroy {
           }
         });
 
+        // Sort unlocked first
         this.achievements.sort((a, b) => {
           if (a.isUnlocked && !b.isUnlocked) return -1;
           if (!a.isUnlocked && b.isUnlocked) return 1;
-          
-          const rarityOrder = { 'común': 1, 'poco común': 2, 'raro': 3, 'épico': 4 };
-          return (rarityOrder[a.rarity as keyof typeof rarityOrder] || 1) - 
-                 (rarityOrder[b.rarity as keyof typeof rarityOrder] || 1);
+          return 0;
         });
       });
   }
 
-  getRarityColor(rarity: string): string {
-    const colors = {
-      'común': 'medium',
-      'poco común': 'success',
-      'raro': 'primary',
-      'épico': 'warning'
-    };
-    return colors[rarity as keyof typeof colors] || 'medium';
-  }
-
-  getProgressPercentage(): number {
-    return this.totalAchievements > 0 ? (this.unlockedCount / this.totalAchievements) * 100 : 0;
-  }
-
-  trackByAchievementId(index: number, achievement: Achievement): string {
-    return achievement.id;
+  getIcon(achievement: Achievement): string {
+    return achievement.icon || 'star';
   }
 
   ngOnDestroy() {

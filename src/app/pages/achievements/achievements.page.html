@@ -9,36 +9,20 @@
 
     <div class="achievements-grid">
       <ion-card 
-        *ngFor="let achievement of achievements; trackBy: trackByAchievementId" 
+        *ngFor="let achievement of achievements" 
         class="achievement-card"
-        [class.unlocked]="achievement.isUnlocked"
         [class.locked]="!achievement.isUnlocked">
         
         <ion-card-content>
-          <div class="achievement-icon">
-            <ion-icon 
-              [name]="achievement.isUnlocked ? achievement.icon : 'lock-closed'"
-              [color]="achievement.isUnlocked ? getRarityColor(achievement.rarity) : 'medium'">
-            </ion-icon>
-          </div>
+          <ion-icon 
+            [name]="achievement.isUnlocked ? getIcon(achievement) : 'lock-closed'"
+            [color]="achievement.isUnlocked ? 'primary' : 'medium'"
+            class="achievement-icon">
+          </ion-icon>
           
           <div class="achievement-info">
             <h3 class="achievement-name">{{ achievement.name }}</h3>
             <p class="achievement-description">{{ achievement.description }}</p>
-            
-            <div class="achievement-meta">
-              <ion-badge 
-                [color]="getRarityColor(achievement.rarity)"
-                class="rarity-badge">
-                {{ achievement.rarity | titlecase }}
-              </ion-badge>
-              
-              <div *ngIf="achievement.isUnlocked && achievement.unlockedAt" class="unlock-date">
-                <ion-text color="medium">
-                  <small>Desbloqueado: {{ achievement.unlockedAt | date:'short' }}</small>
-                </ion-text>
-              </div>
-            </div>
           </div>
         </ion-card-content>
       </ion-card>
