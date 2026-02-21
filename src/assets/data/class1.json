@@ -6,6 +6,30 @@
         "word": "Perro",
         "options": ["Aúj", "Cuchi", "Cró"],
         "answer": "Aúj"
+      },
+      {
+        "question": "Acierta la palabra",
+        "word": "Gato",
+        "options": ["Turí", "Aúj", "Bís"],
+        "answer": "Turí"
+      },
+      {
+        "question": "Acierta la palabra",
+        "word": "Vaca",
+        "options": ["Cró", "Bís", "Sárocra"],
+        "answer": "Bís"
+      },
+      {
+        "question": "Acierta la palabra",
+        "word": "Pájaro",
+        "options": ["Dibí cun", "Cuí", "Turí"],
+        "answer": "Cuí"
+      },
+      {
+        "question": "Acierta la palabra",
+        "word": "Cerdo",
+        "options": ["Cuchi", "Aúj", "Cró"],
+        "answer": "Cuchi"
       }
     ],
     "matchPairs": [
@@ -15,6 +39,13 @@
           { "word": "Bís", "image": "../../../assets/img/cow.png" },
           { "word": "Turí", "image": "../../../assets/img/cat.png" }
         ]
+      },
+      {
+        "pairs": [
+          { "word": "Aúj", "image": "../../../assets/img/dog.png" },
+          { "word": "Cró", "image": "../../../assets/img/chicken.png" },
+          { "word": "Cuchi", "image": "../../../assets/img/pig.png" }
+        ]
       }
     ],
     "matchImage": [
@@ -23,6 +54,18 @@
         "image": "assets/img/chicken.png",
         "options": ["Dibí cun", "Cró", "Cuchi"],
         "answer": "Cró"
+      },
+      {
+        "question": "¿A qué corresponde la imagen?",
+        "image": "assets/img/cat.png",
+        "options": ["Aúj", "Turí", "Cuí"],
+        "answer": "Turí"
+      },
+      {
+        "question": "¿A qué corresponde la imagen?",
+        "image": "assets/img/dog.png",
+        "options": ["Cuchi", "Aúj", "Bís"],
+        "answer": "Aúj"
       }
     ],
     "typing": [
@@ -30,6 +73,21 @@
         "question": "Escribe la traducción",
         "word": "Sarócra",
         "answer": "Caballo"
+      },
+      {
+        "question": "Escribe la traducción",
+        "word": "Turí",
+        "answer": "Gato"
+      },
+      {
+        "question": "Escribe la traducción",
+        "word": "Aúj",
+        "answer": "Perro"
+      },
+      {
+        "question": "Escribe la traducción",
+        "word": "Bís",
+        "answer": "Vaca"
       }
     ]
   }

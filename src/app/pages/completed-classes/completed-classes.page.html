@@ -4,15 +4,19 @@
       Clases Completadas
     </ion-title>
   </ion-toolbar>
+  <ion-toolbar>
+    <div class="search-section">
+      <ion-searchbar
+        [(ngModel)]="searchTerm"
+        (ionInput)="searchFunction()"
+        placeholder="Buscar clases completadas..."
+        show-clear-button="focus">
+      </ion-searchbar>
+    </div>
+  </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true" class="classes-content">
-  <ion-searchbar
-    [(ngModel)]="searchTerm"
-    (ionInput)="searchFunction()"
-    placeholder="Buscar clases completadas..."
-    show-clear-button="focus">
-  </ion-searchbar>
 
   <ion-grid *ngIf="completedClasses?.length; else noCompleted">
     <ion-row>

@@ -50,6 +50,7 @@
   align-items: center; 
   padding: 1px; 
   width: 100%;
+  background-color: #ffffff;
 }
 
 ion-title {
@@ -61,15 +62,15 @@ ion-title {
 }
 
 ion-header {
-  background-color: transparent !important;
-  --background: transparent !important; 
-  --box-shadow: none; 
+  background-color: #ffffff !important;
+  --background: #ffffff !important;
+  --box-shadow: none;
   box-shadow: none;
 }
 
 ion-toolbar {
-  background-color: transparent !important; 
-  --background: transparent !important;
+  background-color: #ffffff !important;
+  --background: #ffffff !important;
 }
 
 ion-searchbar {
