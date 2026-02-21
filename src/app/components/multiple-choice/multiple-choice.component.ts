@@ -1,6 +1,6 @@
 // src/app/components/multiple-choice/multiple-choice.component.ts
 
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter, OnChanges, SimpleChanges } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
 
@@ -11,13 +11,22 @@ import { IonicModule } from '@ionic/angular';
   templateUrl: './multiple-choice.component.html',
   styleUrls: ['./multiple-choice.component.scss']
 })
-export class MultipleChoiceComponent {
+export class MultipleChoiceComponent implements OnChanges {
   @Input() data: any;
   @Output() answered = new EventEmitter<boolean>();
 
   selectedOption: string | null = null;
   feedbackState: { [key: string]: 'correct' | 'wrong' | undefined } = {};
   locked: boolean = false;
+
+  ngOnChanges(changes: SimpleChanges) {
+    if (changes['data']) {
+      // Reset state when new data arrives
+      this.selectedOption = null;
+      this.feedbackState = {};
+      this.locked = false;
+    }
+  }
 
   selectOption(option: string) {
     if (this.locked) return;

@@ -1,5 +1,5 @@
 // filepath: src/app/components/typing/typing.component.ts
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter, OnChanges, SimpleChanges } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
 
@@ -10,12 +10,19 @@ import { IonicModule } from '@ionic/angular';
   templateUrl: './typing.component.html',
   styleUrls: ['./typing.component.scss']
 })
-export class TypingComponent {
+export class TypingComponent implements OnChanges {
   @Input() data: { question: string; word: string; answer: string } | any;
   @Output() answered = new EventEmitter<boolean>();
 
   userAnswer = '';
   isCorrect: boolean | null = null;
+
+  ngOnChanges(changes: SimpleChanges) {
+    if (changes['data']) {
+      this.userAnswer = '';
+      this.isCorrect = null;
+    }
+  }
 
   updateAnswer(event: any) {
     this.userAnswer = event.target.value;
